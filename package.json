@@ -1,0 +1,36 @@
+{
+  "name": "github-repo-to-single-file",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A TypeScript application that downloads GitHub repository as a single text file.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "postinstall": "npm run build",
+    "start": "npm run build && node dist/index.js",
+    "download": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mezentsevs/github-repo-to-single-file.git"
+  },
+  "keywords": [
+    "github",
+    "repository",
+    "download",
+    "text"
+  ],
+  "author": "mezentsevs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mezentsevs/github-repo-to-single-file/issues"
+  },
+  "homepage": "https://github.com/mezentsevs/github-repo-to-single-file#readme",
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3"
+  }
+}
