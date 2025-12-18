@@ -1,9 +1,9 @@
-# GitHub repository to single file
+# GitHub repo to single file
 
 ## Note on Future Development
 Please be aware that this application is in active development and hasn't been extensively tested yet. If you encounter any performance issues or bugs, contributions are greatly appreciated - feel free to open a pull request, and we can work together to improve it. Thank you for your understanding and support.
 
-## About 'GitHub repository to single file'
+## About 'GitHub repo to single file'
 
 This is a GitHub repository to single file downloader, written in and for educational and demonstrational purposes.
 
@@ -253,7 +253,7 @@ That's it! Thank you!
 
 ## License
 
-The 'GitHub repository to single file' is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The 'GitHub repo to single file' is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 ## Third-Party Licenses
 This project uses third-party software components. Their respective licenses can be found in the LICENSE-3rd-party.md file.
