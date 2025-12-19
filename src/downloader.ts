@@ -39,24 +39,27 @@ export class GitHubRepoDownloader {
     }
 
     private matchesPattern(filePath: string, pattern: string): boolean {
-        if (pattern.includes('**') || (pattern.includes('*') && pattern.includes('/'))) {
-            const regex = this.patternToRegex(pattern);
+        const normalizedPattern = pattern.startsWith('/') ? pattern.slice(1) : pattern;
+
+        if (normalizedPattern.includes('**') || (normalizedPattern.includes('*') && normalizedPattern.includes('/'))) {
+            const regex = this.patternToRegex(normalizedPattern);
 
             return regex.test(filePath);
         }
 
-        if (pattern.startsWith('*') && pattern.endsWith('*') && pattern.length > 1) {
-            const content = pattern.slice(1, -1);
+        if (normalizedPattern.startsWith('*') && normalizedPattern.endsWith('*') && normalizedPattern.length > 1) {
+            const content = normalizedPattern.slice(1, -1);
 
             return filePath.includes(content);
         }
 
-        if (pattern.startsWith('*')) {
-            const extension = pattern.slice(1);
+        if (normalizedPattern.startsWith('*')) {
+            const extension = normalizedPattern.slice(1);
+
             return filePath.endsWith(extension);
         }
 
-        return filePath === pattern;
+        return filePath === normalizedPattern;
     }
 
     private shouldIncludeFile(filePath: string): boolean {
