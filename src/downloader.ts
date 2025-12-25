@@ -136,7 +136,7 @@ export class GitHubRepoDownloader {
         const [owner, repo] = this.getOwnerAndRepo(options.repository);
         const branch = options.branch || 'main';
 
-        console.log(`Getting repository tree for ${owner}/${repo} (branch: ${branch})...`);
+        console.log(`✔  Getting repository tree for ${owner}/${repo} (branch: ${branch})...`);
 
         const treeUrl = `${this.apiBaseUrl}/repos/${owner}/${repo}/git/trees/${branch}?recursive=1`;
 
@@ -148,7 +148,7 @@ export class GitHubRepoDownloader {
                 item.type === 'blob' && this.shouldIncludeFile(item.path)
             );
 
-            console.log(`Found ${files.length} files after applying filters`);
+            console.log(`✔  Found ${files.length} files after applying filters`);
 
             return files;
         } catch (error) {
@@ -192,7 +192,7 @@ export class GitHubRepoDownloader {
         options: DownloadOptions, 
         files: GitHubTreeItem[]
     ): Promise<FileContent[]> {
-        console.log('Downloading files...');
+        console.log('✔  Downloading files...');
 
         const contents: FileContent[] = [];
         const totalFiles = files.length;
@@ -224,7 +224,7 @@ export class GitHubRepoDownloader {
         options: DownloadOptions, 
         contents: FileContent[]
     ): Promise<string> {
-        console.log('Creating single output file...');
+        console.log('✔  Creating single output file...');
 
         const outputFileName = this.generateOutputFileName(options);
         const outputPath = path.join(config.OUTPUT_DIR, outputFileName);
@@ -263,7 +263,7 @@ export class GitHubRepoDownloader {
     public async downloadRepository(options: DownloadOptions): Promise<DownloadResult> {
         const startTime = Date.now();
 
-        console.log('Starting GitHub Repository Downloader');
+        console.log('🚀 Starting GitHub Repository Downloader');
         console.log('─'.repeat(50));
 
         try {
@@ -295,7 +295,7 @@ export class GitHubRepoDownloader {
                 duration,
             };
         } catch (error) {
-            console.error('Download failed:', error);
+            console.error('❌ Download failed:', error);
 
             throw error;
         }

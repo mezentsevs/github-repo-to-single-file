@@ -4,7 +4,7 @@ export function parseArguments(): DownloadOptions {
     const args = process.argv.slice(2);
 
     if (args.length === 0) {
-        console.error('ERROR: Repository not specified');
+        console.error('❌ ERROR: Repository not specified');
         console.info('Usage: npm start -- <owner/repo> [branch] [output-file]');
         console.info('Example: npm start -- facebook/react main react_code.txt');
 
@@ -14,7 +14,7 @@ export function parseArguments(): DownloadOptions {
     const repository = args[0];
 
     if (!repository.includes('/')) {
-        console.error('ERROR: Repository must be in format "owner/repo"');
+        console.error('❌ ERROR: Repository must be in format "owner/repo"');
         console.info('Example: facebook/react');
 
         process.exit(1);
@@ -26,9 +26,8 @@ export function parseArguments(): DownloadOptions {
         outputFile: args[2] || undefined,
     };
 
-    console.log('CLI Arguments:');
-    console.log(`  Repository: ${options.repository}`);
-    console.log(`  Branch: ${options.branch}`);
+    console.log(`📂 Repository: ${options.repository}`);
+    console.log(`🌿 Branch: ${options.branch}`);
 
     if (options.outputFile) {
         console.log(`  Output file: ${options.outputFile}`);
