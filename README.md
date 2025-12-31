@@ -83,20 +83,20 @@ The application provides two main commands for downloading repositories:
 
 1. BUILD AND RUN (for development or first use after changes):
 ``` bash
-npm start -- facebook/react
+npm start facebook/react
 ```
 This command will: 1) build the TypeScript code, 2) run the downloader.
 
 2. FAST DOWNLOAD (for repeated use after initial build):
 ``` bash
-npm run download -- facebook/react
+npm run download facebook/react
 ```
 This command runs the already built application directly, skipping the build step for faster execution.
 
 Both commands accept the same arguments:
 ``` bash
-npm start -- <repository> [branch] [output-file]
-npm run download -- <repository> [branch] [output-file]
+npm start <repository> [branch] [output-file]
+npm run download <repository> [branch] [output-file]
 ```
 - repository: Required. Must be in the format "owner/repo_name".
 - branch: Optional. The branch to download (defaults to "main").
@@ -104,11 +104,11 @@ npm run download -- <repository> [branch] [output-file]
 
 Examples:
 ``` bash
-npm start -- facebook/react
-npm run download -- facebook/react main
-npm run download -- facebook/react main react_source_code.txt
-npm start -- vuejs/core next
-npm run download -- microsoft/TypeScript main typescript_code.txt
+npm start facebook/react
+npm run download facebook/react main
+npm run download facebook/react main react_source_code.txt
+npm start vuejs/core next
+npm run download microsoft/TypeScript main typescript_code.txt
 ```
 
 ### What the application does
@@ -181,21 +181,21 @@ Example 1: Download React repository source files only
 ``` bash
 INCLUDE_PATTERNS=src/**/*.js,src/**/*.jsx,src/**/*.ts,src/**/*.tsx
 EXCLUDE_PATTERNS=**/*.test.*,**/*.spec.*,**/node_modules/**,**/dist/**
-Command: npm run download -- facebook/react
+Command: npm run download facebook/react
 ```
 
 Example 2: Download Python project without tests and virtual environments
 ``` bash
 INCLUDE_PATTERNS=**/*.py
 EXCLUDE_PATTERNS=**/*test*.py,**/tests/**,**/venv/**,**/.env**
-Command: npm start -- django/django
+Command: npm start django/django
 ```
 
 Example 3: Download specific folder structure
 ``` bash
 INCLUDE_PATTERNS=lib/**/*,include/**/*,src/**/*.cpp,src/**/*.hpp,CMakeLists.txt,README.md
 EXCLUDE_PATTERNS=**/test/**,**/examples/**,**/*.o,**/*.so
-Command: npm run download -- openssl/openssl
+Command: npm run download openssl/openssl
 ```
 
 ## Output File Structure
