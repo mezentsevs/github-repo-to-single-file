@@ -1,8 +1,5 @@
 # GitHub repo to single file
 
-## Note on Future Development
-Please be aware that this application is in active development and hasn't been extensively tested yet. If you encounter any performance issues or bugs, contributions are greatly appreciated - feel free to open a pull request, and we can work together to improve it. Thank you for your understanding and support.
-
 ## About 'GitHub repo to single file'
 
 This is a GitHub repository to single file downloader, written in and for educational and demonstrational purposes.
