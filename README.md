@@ -252,6 +252,13 @@ That's it! Thank you!
 
 <img width="1090" height="535" alt="2025-12-25_11-00-39" src="https://github.com/user-attachments/assets/993ab234-869d-457b-aeb4-3d5cdb937996" />
 
+## ⭐ If You Found This Useful
+
+If this project helped you - whether it saved you time, taught you something, or gave you an idea - please consider leaving a star or a like.
+A ⭐, 👍, ❤️, or 💎 tells me that the work matters. It's a small gesture that genuinely fuels my motivation to keep improving the project and building new tools.
+
+Thanks for your interest in this project!
+
 ## License
 
 The 'GitHub repo to single file' is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
