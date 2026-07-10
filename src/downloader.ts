@@ -166,11 +166,17 @@ export class GitHubRepoDownloader {
 
         const [owner, repo] = this.getOwnerAndRepo(options.repository);
         const branch = options.branch || 'main';
-        const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${item.path}`;
+        const apiUrl = `${this.apiBaseUrl}/repos/${owner}/${repo}/contents/${item.path}?ref=${branch}`;
 
         try {
-            const response = await this.fetchWithRetry(rawUrl);
-            const content = await response.text();
+            const response = await this.fetchWithRetry(apiUrl);
+            const data = await response.json() as { content?: string; encoding?: string; size?: number };
+
+            if (!data.content || data.encoding !== 'base64') {
+                throw new Error(`Unexpected response format for ${item.path}`);
+            }
+
+            const content = Buffer.from(data.content, 'base64').toString('utf-8');
 
             return {
                 path: item.path,
